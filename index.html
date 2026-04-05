@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Anket Pratap Singh — Technical Lead, Java Backend Engineer specialising in Spring Boot, Apache Kafka, gRPC, Microservices, and Distributed Systems. 3+ years at Comviva Technologies.">
+<meta name="keywords" content="Java Developer, Spring Boot, Kafka, gRPC, Microservices, Backend Engineer, Technical Lead, Distributed Systems, REST API, PostgreSQL, Docker, Kubernetes">
+<title>Anket Pratap Singh — Technical Lead | Java Backend Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f9f8f5;--bg2:#f0eeea;--bg3:#fff;
+  --ink:#111318;--ink2:#3c404f;--ink3:#7a7f92;--ink4:#b0b4c4;
+  --blue:#1647cc;--blue-dk:#0f35a0;--blue-lt:#eaf0fd;--blue-md:#c2d3f8;
+  --green:#0c7a5e;--green-lt:#e2f5ef;--green-md:#a7f3d0;
+  --amber:#b45309;--amber-lt:#fef3e2;--amber-md:#fcd34d;
+  --red:#c0392b;--red-lt:#fff0ee;--red-md:#fca5a5;
+  --purple:#6d28d9;--purple-lt:#ede9fe;--purple-md:#c4b5fd;
+  --rule:#e2dfd8;
+  --sh:0 4px 32px rgba(17,19,24,.07);
+  --sh2:0 12px 56px rgba(17,19,24,.13);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-thumb{background:var(--blue-md);border-radius:10px;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;background:rgba(249,248,245,.96);backdrop-filter:blur(20px);border-bottom:1px solid var(--rule);transition:box-shadow .3s;}
+.nbrand{display:flex;align-items:center;gap:10px;}
+.ninit{width:36px;height:36px;border-radius:9px;background:var(--blue);color:#fff;font-size:13px;font-weight:600;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;}
+.nname{font-size:15px;font-weight:600;color:var(--ink);}
+.nrole{font-size:11px;color:var(--ink3);}
+.nlinks{display:flex;gap:22px;list-style:none;}
+.nlinks a{font-size:13px;font-weight:500;color:var(--ink3);transition:color .2s;}
+.nlinks a:hover{color:var(--blue);}
+.ncta{background:var(--blue);color:#fff;font-size:13px;font-weight:500;padding:8px 20px;border-radius:7px;transition:all .2s;white-space:nowrap;}
+.ncta:hover{background:var(--blue-dk);transform:translateY(-1px);}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hbg span{display:block;width:22px;height:2px;background:var(--ink);border-radius:2px;}
+.mmenu{display:none;position:fixed;top:60px;left:0;right:0;background:var(--bg3);border-bottom:1px solid var(--rule);padding:16px 5%;z-index:998;flex-direction:column;gap:4px;}
+.mmenu.open{display:flex;}
+.mmenu a{font-size:15px;font-weight:500;color:var(--ink2);padding:10px 0;border-bottom:1px solid var(--rule);}
+.mmenu a:last-child{border:none;color:var(--blue);}
+
+/* ── HERO ── */
+.hero{min-height:100vh;padding-top:60px;display:flex;align-items:center;background:var(--bg);}
+.hwrap{width:100%;max-width:1240px;margin:0 auto;padding:72px 5%;display:grid;grid-template-columns:1.15fr 1fr;gap:64px;align-items:center;}
+.hbadge{display:inline-flex;align-items:center;gap:8px;background:var(--blue-lt);border:1px solid var(--blue-md);color:var(--blue);font-size:11px;font-weight:600;padding:6px 14px;border-radius:99px;margin-bottom:22px;font-family:'JetBrains Mono',monospace;letter-spacing:.05em;}
+.hdot{width:7px;height:7px;border-radius:50%;background:var(--blue);animation:blink 2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+h1{font-family:'Playfair Display',serif;font-size:clamp(38px,5vw,66px);font-weight:700;line-height:1.07;color:var(--ink);margin-bottom:8px;}
+h1 em{font-style:italic;color:var(--blue);}
+.hsub{font-size:clamp(15px,1.8vw,20px);font-weight:300;color:var(--ink2);margin-bottom:26px;}
+.hbio{font-size:15px;color:var(--ink3);line-height:1.9;margin-bottom:36px;}
+.hbio strong{color:var(--ink2);font-weight:500;}
+.hbtns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
+.bp{background:var(--blue);color:#fff;padding:13px 28px;border-radius:8px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:all .2s;}
+.bp:hover{background:var(--blue-dk);transform:translateY(-2px);box-shadow:0 8px 24px rgba(22,71,204,.25);}
+.bo{border:1.5px solid var(--rule);color:var(--ink2);padding:12px 24px;border-radius:8px;font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:all .2s;}
+.bo:hover{border-color:var(--blue);color:var(--blue);background:var(--blue-lt);}
+.hchips{display:flex;flex-wrap:wrap;gap:14px;}
+.chip{font-size:12px;color:var(--ink3);font-family:'JetBrains Mono',monospace;}
+
+/* metrics */
+.metrics{display:flex;flex-direction:column;gap:12px;}
+.mc{background:var(--bg3);border:1px solid var(--rule);border-radius:16px;padding:22px 26px;transition:all .3s;}
+.mc:hover{box-shadow:var(--sh);transform:translateY(-2px);}
+.mc.blue{background:var(--blue);border-color:var(--blue);}
+.mn{font-family:'Playfair Display',serif;font-size:46px;font-weight:700;line-height:1;color:var(--ink);}
+.mc.blue .mn{color:#fff;}
+.mu{font-size:26px;}
+.ml{font-size:13px;color:var(--ink3);margin-top:4px;}
+.mc.blue .ml{color:rgba(255,255,255,.7);}
+.ms{font-size:11px;color:var(--ink4);margin-top:2px;font-family:'JetBrains Mono',monospace;}
+.mc.blue .ms{color:rgba(255,255,255,.45);}
+.mr{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+
+/* ── SECTION ── */
+.sec{padding:88px 5%;}
+.si{max-width:1240px;margin:0 auto;}
+.ey{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:500;letter-spacing:.12em;color:var(--blue);text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+.ey::after{content:'';flex:1;height:1px;background:var(--blue-md);max-width:36px;}
+.sh2{font-family:'Playfair Display',serif;font-size:clamp(26px,3.5vw,42px);font-weight:700;color:var(--ink);margin-bottom:14px;line-height:1.15;}
+.sp{font-size:15px;color:var(--ink3);max-width:580px;line-height:1.85;}
+
+/* tags */
+.tags{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;padding:4px 10px;border-radius:4px;background:var(--bg2);color:var(--ink3);border:1px solid var(--rule);}
+.tag.b{background:var(--blue-lt);color:var(--blue);border-color:var(--blue-md);}
+.tag.g{background:var(--green-lt);color:var(--green);border-color:var(--green-md);}
+.tag.a{background:var(--amber-lt);color:var(--amber);border-color:var(--amber-md);}
+
+/* ── ABOUT ── */
+.about-bg{background:var(--bg3);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.ag{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;margin-top:52px;align-items:start;}
+.at p{font-size:15px;color:var(--ink2);line-height:1.9;margin-bottom:18px;}
+.at p strong{color:var(--ink);font-weight:600;}
+.ahl{background:var(--blue-lt);border-left:3px solid var(--blue);padding:16px 20px;border-radius:0 10px 10px 0;margin:24px 0;font-size:14px;color:var(--ink2);font-style:italic;line-height:1.8;}
+.pillars{display:flex;flex-direction:column;gap:14px;}
+.pillar{display:flex;gap:14px;padding:18px 20px;background:var(--bg);border:1px solid var(--rule);border-radius:12px;transition:all .25s;}
+.pillar:hover{border-color:var(--blue-md);background:var(--blue-lt);}
+.pi{width:40px;height:40px;border-radius:10px;background:var(--blue-lt);border:1px solid var(--blue-md);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.pt{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:3px;}
+.pd{font-size:12px;color:var(--ink3);line-height:1.65;}
+
+/* ── EXPERIENCE ── */
+.exp-bg{background:var(--bg);}
+.etl{margin-top:52px;}
+.ei{display:grid;grid-template-columns:190px 1fr;gap:52px;padding:52px 0;border-bottom:1px solid var(--rule);opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s;}
+.ei.vis{opacity:1;transform:none;}
+.ei:first-child{padding-top:0;}
+.ei:last-child{border-bottom:none;padding-bottom:0;}
+.ep{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink3);margin-bottom:10px;line-height:1.6;}
+.eb{display:inline-flex;align-items:center;gap:5px;background:var(--blue-lt);color:var(--blue);font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;margin-bottom:6px;font-family:'JetBrains Mono',monospace;}
+.eloc{font-size:11px;color:var(--ink4);font-family:'JetBrains Mono',monospace;margin-top:4px;}
+.er{font-size:21px;font-weight:600;color:var(--ink);margin-bottom:5px;}
+.etag{font-size:13px;color:var(--blue);font-weight:500;margin-bottom:8px;}
+.ectx{font-size:13px;color:var(--ink3);line-height:1.75;margin-bottom:18px;padding:12px 16px;background:var(--bg2);border-radius:8px;border-left:2px solid var(--rule);}
+.bul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:22px;}
+.bul li{font-size:14px;color:var(--ink2);line-height:1.75;padding-left:22px;position:relative;}
+.bul li::before{content:'';position:absolute;left:0;top:11px;width:8px;height:2px;background:var(--blue-md);border-radius:1px;}
+.bul li strong{color:var(--ink);font-weight:600;}
+
+/* ── AWARDS — HERO SECTION ── */
+.awards-bg{background:linear-gradient(135deg,#0a1f7a 0%,#1647cc 50%,#2563eb 100%);}
+.awards-bg .ey{color:rgba(255,255,255,.5);}
+.awards-bg .ey::after{background:rgba(255,255,255,.2);}
+.awards-bg .sh2{color:#fff;}
+.awards-bg .sp{color:rgba(255,255,255,.7);}
+.awards-grid{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.aw{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:32px;transition:all .3s;position:relative;overflow:hidden;opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s,box-shadow .3s,background .3s;}
+.aw.vis{opacity:1;transform:none;}
+.aw::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#fbbf24,#f59e0b);}
+.aw:hover{background:rgba(255,255,255,.13);box-shadow:0 20px 60px rgba(0,0,0,.3);}
+.aw-ribbon{display:inline-flex;align-items:center;gap:6px;background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.35);color:#fbbf24;font-size:11px;font-weight:600;padding:5px 12px;border-radius:99px;margin-bottom:20px;font-family:'JetBrains Mono',monospace;}
+.aw-icon{font-size:32px;margin-bottom:16px;}
+.aw-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:#fff;margin-bottom:8px;line-height:1.3;}
+.aw-period{font-family:'JetBrains Mono',monospace;font-size:12px;color:#93c5fd;margin-bottom:12px;}
+.aw-desc{font-size:13px;color:rgba(255,255,255,.7);line-height:1.75;}
+.aw-signer{margin-top:20px;padding-top:16px;border-top:1px solid rgba(255,255,255,.1);font-size:11px;color:rgba(255,255,255,.4);font-family:'JetBrains Mono',monospace;}
+.aw-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(251,191,36,.15);border:1px solid rgba(251,191,36,.3);color:#fbbf24;font-size:10px;font-weight:600;padding:3px 9px;border-radius:99px;margin-top:10px;}
+
+/* ── PROJECTS ── */
+.proj-bg{background:var(--bg3);border-top:1px solid var(--rule);}
+.pg{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.pc{background:var(--bg);border:1px solid var(--rule);border-radius:18px;padding:32px;opacity:0;transform:translateY(20px);transition:opacity .55s,transform .55s,box-shadow .3s,border-color .3s;}
+.pc.vis{opacity:1;transform:none;}
+.pc:hover{box-shadow:var(--sh2);border-color:var(--blue-md);}
+.pc.feat{background:linear-gradient(140deg,#0a2d96,#1647cc 55%,#2563eb);border-color:transparent;}
+.pc.feat:hover{box-shadow:0 20px 64px rgba(22,71,204,.4);}
+.pnum{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink4);margin-bottom:18px;letter-spacing:.08em;}
+.pc.feat .pnum{color:rgba(255,255,255,.35);}
+.pico{width:52px;height:52px;border-radius:14px;background:var(--blue-lt);border:1px solid var(--blue-md);display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:18px;}
+.pc.feat .pico{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.2);}
+.pname{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:4px;}
+.pc.feat .pname{color:#fff;}
+.pslug{font-size:12px;font-weight:500;color:var(--blue);margin-bottom:14px;font-family:'JetBrains Mono',monospace;}
+.pc.feat .pslug{color:rgba(255,255,255,.55);}
+.pdesc{font-size:13px;color:var(--ink3);line-height:1.85;margin-bottom:20px;}
+.pc.feat .pdesc{color:rgba(255,255,255,.72);}
+.parch{font-size:12px;color:var(--ink3);padding:12px 16px;background:var(--bg3);border-radius:8px;border:1px solid var(--rule);margin-bottom:18px;line-height:1.75;}
+.parch strong{color:var(--ink2);font-weight:600;}
+.pc.feat .parch{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.15);color:rgba(255,255,255,.68);}
+.pc.feat .parch strong{color:#fff;}
+.imps{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
+.imp{display:flex;gap:10px;align-items:flex-start;}
+.impd{min-width:22px;height:22px;border-radius:6px;background:var(--green-lt);color:var(--green);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+.pc.feat .impd{background:rgba(255,255,255,.18);color:#fff;}
+.impt{font-size:13px;color:var(--ink2);line-height:1.6;}
+.pc.feat .impt{color:rgba(255,255,255,.8);}
+.pc.feat .tag{background:rgba(255,255,255,.15);color:rgba(255,255,255,.85);border-color:rgba(255,255,255,.2);}
+
+/* ── SKILLS ── */
+.sk-bg{background:var(--ink);}
+.sk-bg .ey{color:#4a6fa0;}
+.sk-bg .ey::after{background:#252840;}
+.sk-bg .sh2{color:#fff;}
+.sk-bg .sp{color:#6b7087;}
+.skg{margin-top:52px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.sg{background:#161929;border:1px solid #252840;border-radius:16px;padding:26px;}
+.sgt{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;letter-spacing:.12em;color:#3d4260;text-transform:uppercase;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid #252840;}
+.skrows{display:flex;flex-direction:column;gap:15px;}
+.skr{display:flex;flex-direction:column;gap:5px;}
+.skt{display:flex;justify-content:space-between;}
+.skn{font-size:13px;color:#c0c4d8;}
+.skp{font-family:'JetBrains Mono',monospace;font-size:11px;color:#3d4260;}
+.sktr{height:3px;background:#252840;border-radius:2px;overflow:hidden;}
+.skf{height:3px;background:linear-gradient(90deg,#1647cc,#60a5fa);border-radius:2px;width:0;transition:width 1.3s cubic-bezier(.4,0,.2,1);}
+.tpills{margin-top:44px;display:flex;flex-wrap:wrap;gap:9px;justify-content:center;}
+.tp{font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 14px;border-radius:99px;border:1px solid #252840;color:#555a78;transition:all .25s;cursor:default;}
+.tp:hover{border-color:var(--blue);color:#93b4f8;background:rgba(22,71,204,.1);}
+
+/* ── CERTIFICATIONS ── */
+.cert-bg{background:var(--bg);border-top:1px solid var(--rule);}
+.cert-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:40px;}
+.csum{background:var(--bg3);border:1px solid var(--rule);border-radius:12px;padding:20px;text-align:center;}
+.csum-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--blue);}
+.csum-lbl{font-size:12px;color:var(--ink3);font-family:'JetBrains Mono',monospace;margin-top:4px;}
+.cert-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+.cf{padding:7px 16px;border-radius:99px;border:1px solid var(--rule);background:transparent;font-size:13px;cursor:pointer;color:var(--ink3);font-family:'Outfit',sans-serif;transition:all .2s;}
+.cf.active,.cf:hover{background:var(--blue);color:#fff;border-color:var(--blue);}
+.cg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.cc{background:var(--bg3);border:1px solid var(--rule);border-radius:16px;overflow:hidden;transition:all .3s;display:flex;flex-direction:column;}
+.cc:hover{box-shadow:var(--sh2);transform:translateY(-4px);}
+.cc-stripe{height:4px;}
+.cc-body{padding:22px;flex:1;display:flex;flex-direction:column;}
+.cc-plat{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.cc-pico{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;font-family:'JetBrains Mono',monospace;flex-shrink:0;}
+.cc-pname{font-size:12px;font-weight:600;letter-spacing:.04em;font-family:'JetBrains Mono',monospace;}
+.cc-ptype{font-size:11px;color:var(--ink3);}
+.cc-title{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;line-height:1.4;flex:1;}
+.cc-inst{font-size:12px;color:var(--ink3);margin-bottom:12px;line-height:1.6;}
+.cc-meta{display:flex;flex-direction:column;gap:5px;margin-bottom:14px;}
+.cc-mr{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--ink3);font-family:'JetBrains Mono',monospace;}
+.cc-ft{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid var(--rule);}
+.cc-badge{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;padding:4px 10px;border-radius:99px;}
+.cc-vfy{font-size:12px;font-weight:500;color:var(--blue);display:flex;align-items:center;gap:4px;transition:color .2s;}
+.cc-vfy:hover{color:var(--blue-dk);}
+/* hr */
+.hr-stripe{background:linear-gradient(90deg,#00ea64,#1ebc61);}
+.hr-ico{background:#f0fdf4;color:#15803d;}
+.hr-pn{color:#15803d;}
+.hr-b{background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;}
+/* udemy */
+.ud-stripe{background:linear-gradient(90deg,#a435f0,#7e2cd3);}
+.ud-ico{background:var(--purple-lt);color:var(--purple);}
+.ud-pn{color:var(--purple);}
+.ud-b{background:var(--purple-lt);color:var(--purple);border:1px solid var(--purple-md);}
+/* internshala */
+.is-stripe{background:linear-gradient(90deg,#f59e0b,#d97706);}
+.is-ico{background:#fffbeb;color:#92400e;}
+.is-pn{color:#92400e;}
+.is-b{background:#fffbeb;color:#92400e;border:1px solid var(--amber-md);}
+/* featured */
+.cc.feat-cert{border:2px solid var(--blue);background:linear-gradient(145deg,#f0f5ff,#fff);}
+
+/* ── RECOGNITION/EDUCATION ── */
+.rec-bg{background:var(--bg3);border-top:1px solid var(--rule);}
+.rg{margin-top:52px;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+.rc{border-radius:16px;padding:28px;border:1px solid var(--rule);}
+.rc.award{background:linear-gradient(135deg,#fffbeb,#fde8c0);}
+.rc.edu{background:var(--bg);}
+.rc.full{grid-column:span 2;background:var(--blue-lt);border-color:var(--blue-md);}
+.rc-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.12em;color:var(--ink3);text-transform:uppercase;margin-bottom:12px;}
+.rc-badge{display:inline-flex;align-items:center;gap:6px;background:var(--amber-lt);border:1px solid var(--amber-md);color:var(--amber);font-size:12px;font-weight:600;padding:6px 14px;border-radius:99px;margin-bottom:12px;}
+.rc-title{font-size:18px;font-weight:600;color:var(--ink);margin-bottom:8px;}
+.rc-sub{font-size:13px;color:var(--ink3);line-height:1.8;}
+.rc-sub strong{color:var(--ink2);font-weight:600;}
+.traits{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+.trait{display:flex;align-items:center;gap:7px;padding:9px 16px;background:#fff;border:1px solid var(--blue-md);border-radius:99px;font-size:13px;color:var(--blue);font-weight:500;}
+
+/* ── CONTACT ── */
+.ct-bg{background:var(--ink);}
+.ct-in{max-width:1240px;margin:0 auto;padding:88px 5%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.ct-bg .ey{color:#4a6fa0;}
+.ct-bg .ey::after{background:#252840;}
+.ct-bg .sh2{color:#fff;margin-bottom:18px;}
+.ct-pitch{font-size:15px;color:#6b7087;line-height:1.9;margin-bottom:36px;}
+.ct-pitch strong{color:#9ba3be;}
+.clinks{display:flex;flex-direction:column;gap:14px;}
+.cl{display:flex;align-items:center;gap:14px;padding:16px 20px;background:#161929;border:1px solid #252840;border-radius:12px;transition:all .25s;}
+.cl:hover{border-color:var(--blue);background:rgba(22,71,204,.1);}
+.cl-ico{width:40px;height:40px;border-radius:10px;background:rgba(22,71,204,.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.cl-l{font-size:10px;color:#3d4260;font-family:'JetBrains Mono',monospace;margin-bottom:2px;text-transform:uppercase;letter-spacing:.06em;}
+.cl-v{font-size:14px;color:#c0c4d8;font-weight:500;}
+.ct-r{display:flex;flex-direction:column;gap:18px;}
+.opill{display:flex;align-items:center;gap:12px;padding:18px 22px;background:#161929;border:1px solid #252840;border-radius:12px;}
+.odot{width:9px;height:9px;border-radius:50%;background:#22c55e;animation:blink 2s infinite;flex-shrink:0;}
+.otxt{font-size:13px;color:#9ba3be;line-height:1.65;}
+.otxt strong{color:#fff;}
+.ib{background:#161929;border:1px solid #252840;border-radius:12px;padding:18px 20px;}
+.ib-t{font-family:'JetBrains Mono',monospace;font-size:10px;color:#3d4260;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;}
+.itags{display:flex;flex-wrap:wrap;gap:8px;}
+.itag{font-size:12px;padding:6px 12px;border-radius:6px;background:rgba(22,71,204,.15);border:1px solid rgba(22,71,204,.3);color:#93b4f8;font-weight:500;}
+
+/* ── FOOTER ── */
+footer{background:#0a0c14;padding:26px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+.ftl{font-family:'Playfair Display',serif;color:#fff;font-size:15px;}
+.ftr{font-size:11px;color:#3d4260;font-family:'JetBrains Mono',monospace;text-align:right;}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:none;}}
+.hwrap>*{opacity:0;animation:fadeUp .7s ease forwards;}
+.hbadge{animation-delay:.08s;}
+h1{animation-delay:.16s;}
+.hsub{animation-delay:.24s;}
+.hbio{animation-delay:.32s;}
+.hbtns{animation-delay:.4s;}
+.hchips{animation-delay:.48s;}
+.metrics{animation-delay:.3s;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1080px){
+  .hwrap,.ag,.ct-in{grid-template-columns:1fr;}
+  .metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .mr{display:contents;}
+  .mc.blue{grid-column:span 2;}
+  .skg{grid-template-columns:1fr 1fr;}
+  .cg{grid-template-columns:1fr 1fr;}
+  .cert-summary{grid-template-columns:1fr 1fr;}
+  .awards-grid{grid-template-columns:1fr;}
+  .pg{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  .nlinks,.ncta{display:none;}
+  .hbg{display:flex;}
+  .hwrap{padding:48px 5%;}
+  .sec{padding:64px 5%;}
+  .ei{grid-template-columns:1fr;gap:18px;}
+  .skg{grid-template-columns:1fr;}
+  .cg{grid-template-columns:1fr;}
+  .rg{grid-template-columns:1fr;}
+  .rc.full{grid-column:span 1;}
+  .ct-in{gap:48px;padding:64px 5%;}
+  .metrics{grid-template-columns:1fr 1fr;}
+  .mc.blue{grid-column:span 2;}
+  .cert-summary{grid-template-columns:1fr 1fr;}
+  .awards-grid{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  h1{font-size:34px;}
+  .hbtns{flex-direction:column;}
+  .bp,.bo{width:100%;justify-content:center;}
+  .metrics{grid-template-columns:1fr;}
+  .mc.blue{grid-column:auto;}
+  .mr{display:flex;flex-direction:column;}
+  .cert-summary{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nbrand">
+    <div class="ninit">APS</div>
+    <div><div class="nname">Anket Pratap Singh</div><div class="nrole">Technical Lead · Java Backend Engineer</div></div>
+  </div>
+  <ul class="nlinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certifications">Certifications</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a class="ncta" href="mailto:singhanket5101@gmail.com">Hire me</a>
+  <div class="hbg" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mmenu" id="mm">
+  <a href="#about" onclick="toggleMenu()">About</a>
+  <a href="#experience" onclick="toggleMenu()">Experience</a>
+  <a href="#awards" onclick="toggleMenu()">Awards</a>
+  <a href="#projects" onclick="toggleMenu()">Projects</a>
+  <a href="#skills" onclick="toggleMenu()">Skills</a>
+  <a href="#certifications" onclick="toggleMenu()">Certifications</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="mailto:singhanket5101@gmail.com" onclick="toggleMenu()">Hire me →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hwrap">
+    <div>
+      <div class="hbadge"><span class="hdot"></span>Open to Senior Backend &amp; Lead Roles</div>
+      <h1>Backends that <em>scale</em><br>&amp; never break.</h1>
+      <p class="hsub">Technical Lead · Java · Spring Boot · Kafka · gRPC · Microservices</p>
+      <p class="hbio"><strong>Motivated, detail-oriented Java backend engineer</strong> with 3+ years building high-performance distributed systems for real-time telecom platforms. Currently Technical Lead at <strong>Comviva Technologies (A Tech Mahindra Company)</strong> — owning systems that process <strong>millions of transactions per day</strong> at 99.9% uptime. <strong>Triple award winner</strong> — recognised 3 times by leadership for growth mindset, exceptional performance, and outstanding collaboration.</p>
+      <div class="hbtns">
+        <a class="bp" href="mailto:singhanket5101@gmail.com">📬 Get in touch</a>
+        <a class="bo" href="https://linkedin.com/in/anket-pratap-singh" target="_blank">🔗 LinkedIn</a>
+      </div>
+      <div class="hchips">
+        <span class="chip">📧 singhanket5101@gmail.com</span>
+        <span class="chip">📱 +91 9161153581</span>
+        <span class="chip">📍 Delhi, India</span>
+      </div>
+    </div>
+    <div class="metrics">
+      <div class="mc blue">
+        <div class="mn">99.9<span class="mu">%</span></div>
+        <div class="ml">System uptime maintained</div>
+        <div class="ms">Telecom-grade production reliability</div>
+      </div>
+      <div class="mr">
+        <div class="mc"><div class="mn" style="color:var(--blue)">35<span class="mu" style="font-size:22px">%</span></div><div class="ml">Performance improved</div><div class="ms">Load testing + Kafka tuning</div></div>
+        <div class="mc"><div class="mn" style="color:var(--blue)">90<span class="mu" style="font-size:22px">%</span></div><div class="ml">Deployment effort cut</div><div class="ms">Config-driven CUIG gateway</div></div>
+      </div>
+      <div class="mr">
+        <div class="mc"><div class="mn" style="color:var(--blue)">3<span class="mu" style="font-size:22px">🏅</span></div><div class="ml">Company awards won</div><div class="ms">Comviva OVATIONS Program</div></div>
+        <div class="mc"><div class="mn" style="color:var(--blue)">20<span class="mu" style="font-size:22px">+</span></div><div class="ml">CRs delivered</div><div class="ms">100% FTR &amp; on-time</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="sec about-bg" id="about">
+  <div class="si">
+    <div class="ey">About me</div>
+    <h2 class="sh2">Who I am &amp; how I think</h2>
+    <div class="ag">
+      <div class="at">
+        <p>I'm a <strong>Java backend engineer and Technical Lead</strong> with 3+ years at Comviva Technologies — India's leading telecom technology company and a Tech Mahindra company. I've grown from a junior engineer to Technical Lead, owning increasingly complex systems end-to-end along the way.</p>
+        <p>My deepest expertise is in <strong>event-driven, distributed microservices architecture</strong> — Apache Kafka for high-throughput async messaging, gRPC for low-latency inter-service communication, Hazelcast for distributed caching, and Spring Boot as the backbone of every service. I've designed and operated systems that process millions of subscriber events daily.</p>
+        <div class="ahl">"Motivated and detail-oriented engineer recognised <strong>three times</strong> by Comviva leadership for growth mindset, exceptional performance, and outstanding team collaboration — OVATIONS Rewards and Recognition Program, FY 2025–26."</div>
+        <p>I take <strong>engineering quality seriously</strong>: Low-Level Design documents before touching code, 100% code and design reviews for my team, structured root cause analysis for every production incident, and proactive monitoring rather than reactive firefighting.</p>
+        <p>B.Tech in Information Technology from AKTU (CGPA 8.26) · 500+ LinkedIn connections · 11 verified credentials across HackerRank, Udemy, Internshala, and Comviva.</p>
+      </div>
+      <div class="pillars">
+        <div class="pillar"><div class="pi">⚙️</div><div><div class="pt">Systems Thinker</div><div class="pd">I design for scale, fault tolerance, and observability from day one — every architectural decision is intentional and reasoned.</div></div></div>
+        <div class="pillar"><div class="pi">📊</div><div><div class="pt">Data-Driven Engineer</div><div class="pd">Every optimisation I make is measured. Load tests, profiling tools, and dashboards — not gut feeling — drive my decisions.</div></div></div>
+        <div class="pillar"><div class="pi">🤝</div><div><div class="pt">Team Multiplier</div><div class="pd">I mentor engineers, run thorough design reviews, and push for clean code. I make the team around me better.</div></div></div>
+        <div class="pillar"><div class="pi">🚀</div><div><div class="pt">End-to-End Owner</div><div class="pd">From requirements and LLD through deployment and production support — I take full accountability for outcomes.</div></div></div>
+        <div class="pillar"><div class="pi">📚</div><div><div class="pt">Continuous Learner</div><div class="pd">Awarded 3 times for a growth mindset. I stay current with evolving distributed systems patterns and Java best practices.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="sec exp-bg" id="experience">
+  <div class="si">
+    <div class="ey">Work experience</div>
+    <h2 class="sh2">3+ years at Comviva Technologies</h2>
+    <p class="sp">All professional experience at Comviva Technologies — India's #1 telecom tech company — across three progressively senior roles with increasing ownership, scope, and impact.</p>
+    <div class="etl">
+
+      <div class="ei">
+        <div><div class="ep">Dec 2025 — Present</div><div class="eb">Comviva Tech</div><div class="eloc">Gurugram, Haryana</div></div>
+        <div>
+          <div class="er">Technical Lead</div>
+          <div class="etag">Architecture · Delivery · Team Leadership · Engineering Quality</div>
+          <div class="ectx">First dedicated lead role. Responsible for full technical direction, system architecture, team output quality, cross-functional collaboration, and production reliability across multiple live telecom operator deployments.</div>
+          <ul class="bul">
+            <li>Architecting and leading development of <strong>real-time backend systems handling millions of subscriber transactions per day</strong> across multiple telecom operators, maintaining 99.9% uptime SLA.</li>
+            <li>Driving <strong>microservices migration using Java, Spring Boot, Kafka, and gRPC</strong> — improving system scalability by 35% and reducing inter-service coupling significantly.</li>
+            <li>Owning the complete engineering lifecycle: <strong>requirement analysis → Low-Level Design → development → SIT/UAT → production deployment → post-release monitoring</strong> with zero handoff gaps.</li>
+            <li>Conducting <strong>100% code and design reviews</strong> across all team members — enforcing SOLID principles, clean architecture, and testability before any code reaches staging.</li>
+            <li>Collaborating with Product, QA, DevOps, and clients to achieve <strong>zero critical production issues</strong> post-release across all delivered features.</li>
+            <li>Contributing to <strong>technical roadmap and capacity planning</strong> — defining engineering direction for the next two quarters across infrastructure and product features.</li>
+            <li>Mentoring junior and mid-level engineers — conducting knowledge transfer sessions, pair programming reviews, and career growth conversations.</li>
+            <li>Implementing <strong>API Gateway-based architectures</strong> with resilience patterns ensuring fault tolerance, circuit breaking, and end-to-end observability.</li>
+          </ul>
+          <div class="tags"><span class="tag b">Java</span><span class="tag b">Spring Boot</span><span class="tag b">Kafka</span><span class="tag b">gRPC</span><span class="tag b">Microservices</span><span class="tag">LLD</span><span class="tag">API Gateway</span><span class="tag">System Design</span><span class="tag">Tech Leadership</span><span class="tag">Capacity Planning</span></div>
+        </div>
+      </div>
+
+      <div class="ei">
+        <div><div class="ep">Dec 2023 — Dec 2025</div><div class="eb">Comviva Tech</div><div class="eloc">Gurugram, Haryana</div></div>
+        <div>
+          <div class="er">Senior Software Engineer</div>
+          <div class="etag">Full SDLC Ownership · Performance Tuning · Reliability Engineering</div>
+          <div class="ectx">Full ownership of the MRTM + J4U product suite — managing 100% of SDLC activities independently with no handoffs. This role established a track record of end-to-end accountability and measurable system improvement. Recognised with two company awards during this period.</div>
+          <ul class="bul">
+            <li>Led development and deployment of <strong>Mobilytix Realtime Marketing (MRTM) v12.2</strong> integrated with Just For You (J4U) USSD platform — a revenue-critical product for multiple telecom operators.</li>
+            <li>Managed <strong>100% of SDLC activities</strong>: requirement gathering, architecture decisions, development, SIT, UAT, production deployment, and post-go-live support — zero gaps.</li>
+            <li>Delivered <strong>20+ client Change Requests</strong> with <strong>100% First-Time-Right (FTR)</strong> and <strong>100% On-Time Delivery</strong> — zero rework cycles across the entire engagement.</li>
+            <li>Designed and reviewed <strong>Low-Level Design (LLD) documents</strong> for all major features — ensuring scalable, independently testable components before development began.</li>
+            <li>Achieved <strong>40% reduction in production incidents</strong> through Grafana monitoring dashboards, proactive alerting thresholds, and structured 5-Why root cause analysis for every incident.</li>
+            <li>Improved system performance by <strong>35%</strong> via load testing, JVM profiling, database query optimisation, Kafka consumer throughput tuning, and Hazelcast cache strategy improvements.</li>
+            <li>Received <strong>Growth Mindset Practitioner of the Month — Silver Award</strong> twice (May &amp; July FY25–26) for outstanding contribution and continuous learning.</li>
+          </ul>
+          <div class="tags"><span class="tag b">Java</span><span class="tag b">Spring Boot</span><span class="tag b">Kafka</span><span class="tag b">gRPC</span><span class="tag">PostgreSQL</span><span class="tag">Oracle</span><span class="tag">JPA/Hibernate</span><span class="tag">Hazelcast</span><span class="tag">Grafana</span><span class="tag">Load Testing</span><span class="tag">LLD</span></div>
+        </div>
+      </div>
+
+      <div class="ei">
+        <div><div class="ep">Sep 2022 — Dec 2023</div><div class="eb">Comviva Tech</div><div class="eloc">Gurugram, Haryana</div></div>
+        <div>
+          <div class="er">Software Engineer</div>
+          <div class="etag">Feature Development · Bug Fixing · QA Collaboration · Stability</div>
+          <div class="ectx">First professional role. Joined MRTM team post-graduation and built deep expertise in distributed systems, event-driven architecture, and telecom domain — the foundation for rapid growth to Senior and Lead levels.</div>
+          <ul class="bul">
+            <li>Worked on <strong>MRTM v5.6 and v7.11.1</strong> — feature development, customer enhancements, performance fixes, and critical production bug resolution.</li>
+            <li>Delivered <strong>15+ customer-facing Change Requests</strong> improving system stability and API response time by <strong>25%</strong> — building a reputation for reliable, on-time delivery.</li>
+            <li>Built backend services using <strong>Java, Spring Boot, Kafka, and REST APIs</strong> — gaining deep real-world experience with high-throughput event-driven distributed systems.</li>
+            <li>Introduced <strong>pre-deployment checklists and regression coverage frameworks</strong> with QA — establishing zero-defect production release practices.</li>
+            <li>Built foundational expertise in <strong>real-time systems, USSD protocols, and telecom domain logic</strong> — knowledge directly leveraged in all subsequent roles.</li>
+          </ul>
+          <div class="tags"><span class="tag b">Java</span><span class="tag b">Spring MVC</span><span class="tag b">Kafka</span><span class="tag">REST APIs</span><span class="tag">Git</span><span class="tag">Postman</span><span class="tag">Linux</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS — HIGHLIGHTED -->
+<section class="sec awards-bg" id="awards">
+  <div class="si">
+    <div class="ey">Company awards</div>
+    <h2 class="sh2">3 OVATIONS Awards from Comviva</h2>
+    <p class="sp">Recognised three times by leadership within FY 2025–26 — signed by Bhagwati Shetty (CHRO, Comviva Technologies) under the Comviva OVATIONS Rewards &amp; Recognition Program.</p>
+    <div class="awards-grid">
+
+      <div class="aw">
+        <div class="aw-ribbon">🏅 Silver · Unit Level</div>
+        <div class="aw-icon">🌱</div>
+        <div class="aw-title">Growth Mindset Practitioner of the Month</div>
+        <div class="aw-period">May, FY 2025–26</div>
+        <div class="aw-desc">Awarded by the Consumer Value Solutions Unit for demonstrating an exceptional growth mindset — including continuous learning, intellectual curiosity, and outstanding collaboration with team members and stakeholders. Represents Comviva's highest recognition for engineers who actively invest in their own and their team's development.</div>
+        <div class="aw-badge">Unit Leader's Choice Award</div>
+        <div class="aw-signer">Signed by Bhagwati Shetty, CHRO · Comviva Technologies (A Tech Mahindra Company)</div>
+      </div>
+
+      <div class="aw" style="transition-delay:.1s">
+        <div class="aw-ribbon">🏅 Silver · Unit Level</div>
+        <div class="aw-icon">🌱</div>
+        <div class="aw-title">Growth Mindset Practitioner of the Month</div>
+        <div class="aw-period">July, FY 2025–26</div>
+        <div class="aw-desc">Second consecutive recognition within the same financial year — a rare achievement reflecting sustained excellence rather than a one-time performance. Awarded again for continuous learning behaviour, proactive contribution beyond assigned responsibilities, and being a positive force for team collaboration within the Consumer Value Solutions Unit.</div>
+        <div class="aw-badge">Unit Leader's Choice Award</div>
+        <div class="aw-signer">Signed by Bhagwati Shetty, CHRO · Comviva Technologies (A Tech Mahindra Company)</div>
+      </div>
+
+      <div class="aw" style="transition-delay:.2s;--before-bg:linear-gradient(90deg,#818cf8,#6366f1);">
+        <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#818cf8,#6366f1);"></div>
+        <div class="aw-ribbon" style="background:rgba(129,140,248,.15);border-color:rgba(129,140,248,.35);color:#a5b4fc;">🏆 Discretionary · Unit Level</div>
+        <div class="aw-icon">⭐</div>
+        <div class="aw-title">Unit Leader's Discretionary Award</div>
+        <div class="aw-period">Q3, FY 2025–26</div>
+        <div class="aw-desc">Awarded at the discretion of the unit leader for exceptional individual contribution during Q3 of FY 2025–26. This award is given when a team member demonstrates above-and-beyond performance that meaningfully impacts the team, product, or client outcomes — beyond what standard recognition criteria cover. Reflects direct leadership confidence in Anket's work quality and professional character.</div>
+        <div class="aw-badge" style="background:rgba(129,140,248,.15);border-color:rgba(129,140,248,.35);color:#a5b4fc;">Unit Leader's Choice</div>
+        <div class="aw-signer">Signed by Bhagwati Shetty, CHRO · Comviva Technologies (A Tech Mahindra Company)</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="sec proj-bg" id="projects">
+  <div class="si">
+    <div class="ey">Key projects</div>
+    <h2 class="sh2">What I've shipped in production</h2>
+    <p class="sp">Three mission-critical backend systems powering real-time marketing for millions of telecom subscribers — all built, owned, and optimised end-to-end.</p>
+    <div class="pg">
+
+      <div class="pc feat">
+        <div class="pnum">PROJECT 01 · FLAGSHIP PRODUCT</div>
+        <div class="pico">📡</div>
+        <div class="pname">Mobilytix Realtime Marketing</div>
+        <div class="pslug">MRTM — Real-time offer decisioning platform</div>
+        <p class="pdesc">A mission-critical platform processing subscriber behaviour, transaction patterns, and contextual signals in real time to trigger hyper-personalised marketing offers at the right moment. Handles millions of events daily with sub-second decisioning latency across multiple telecom operators in India and internationally.</p>
+        <div class="imps">
+          <div class="imp"><div class="impd">↑</div><div class="impt"><strong>35% system performance improvement</strong> — via load testing, JVM profiling, SQL query optimisation, and Kafka consumer throughput tuning.</div></div>
+          <div class="imp"><div class="impd">↓</div><div class="impt"><strong>40% reduction in production incidents</strong> — via Grafana dashboards, proactive alerting, and structured 5-Why root cause analysis.</div></div>
+          <div class="imp"><div class="impd">✓</div><div class="impt"><strong>Millions of transactions per day</strong> at 99.9% system uptime across multiple live operator environments.</div></div>
+          <div class="imp"><div class="impd">✓</div><div class="impt"><strong>20+ Change Requests</strong> delivered at 100% First-Time-Right — zero rework cycles across all client deliveries.</div></div>
+        </div>
+        <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Kafka</span><span class="tag">gRPC</span><span class="tag">PostgreSQL</span><span class="tag">Oracle</span><span class="tag">Hazelcast</span><span class="tag">VoltDB</span><span class="tag">JPA/Hibernate</span></div>
+      </div>
+
+      <div class="pc">
+        <div class="pnum">PROJECT 02</div>
+        <div class="pico">📲</div>
+        <div class="pname">Just For You (J4U)</div>
+        <div class="pslug">USSD-based real-time offer interface</div>
+        <p class="pdesc">A USSD customer interface enabling telecom subscribers — including feature phone users — to browse and select personalised offers generated by MRTM in real time. Built for ultra-low-latency responses, multilingual rendering, and high-concurrency distributed session management.</p>
+        <div class="imps">
+          <div class="imp"><div class="impd">↑</div><div class="impt"><strong>25% improvement in API response time</strong> after systematic profiling and targeted service optimisation.</div></div>
+          <div class="imp"><div class="impd">✓</div><div class="impt">Real-time offer retrieval via <strong>gRPC + Kafka integration</strong> with MRTM — sub-200ms end-to-end.</div></div>
+          <div class="imp"><div class="impd">✓</div><div class="impt">Multilingual template rendering + <strong>distributed session management</strong> via Hazelcast.</div></div>
+        </div>
+        <div class="parch"><strong>Architecture:</strong> Spring Boot → gRPC calls to MRTM for real-time offers → Kafka for async event logging → Hazelcast for session state → USSD gateway &lt;200ms response</div>
+        <div class="tags"><span class="tag b">gRPC</span><span class="tag b">Kafka</span><span class="tag">Spring Boot</span><span class="tag">Hazelcast</span><span class="tag">USSD</span><span class="tag">Session Mgmt</span><span class="tag">JPA</span></div>
+      </div>
+
+      <div class="pc">
+        <div class="pnum">PROJECT 03</div>
+        <div class="pico">🔀</div>
+        <div class="pname">Integration Gateway (CUIG)</div>
+        <div class="pslug">Centralised upstream/downstream integration hub</div>
+        <p class="pdesc">A centralised integration gateway handling all upstream and downstream system communication for the telecom product suite. Supports synchronous HTTP and asynchronous Kafka flows with XSLT-based transformation — making new integrations fully configuration-driven with zero code deployments required.</p>
+        <div class="imps">
+          <div class="imp"><div class="impd">↓</div><div class="impt"><strong>90% reduction in deployment effort</strong> — new integrations via config entry only, zero code changes needed.</div></div>
+          <div class="imp"><div class="impd">✓</div><div class="impt"><strong>Dual-protocol:</strong> HTTP (sync) + Kafka (async) in a single unified gateway.</div></div>
+          <div class="imp"><div class="impd">✓</div><div class="impt"><strong>XSLT transformation engine</strong> for format-agnostic message processing (XML ↔ JSON).</div></div>
+        </div>
+        <div class="parch"><strong>Modules:</strong> GUI · Config Service · Gateway Service · User Service · Event Processor · Interactive Service · Fulfilment Service — all independently deployable microservices via Kafka + Consul.</div>
+        <div class="tags"><span class="tag b">API Gateway</span><span class="tag b">Kafka</span><span class="tag">Spring Boot</span><span class="tag">XSLT</span><span class="tag">Consul</span><span class="tag">PostgreSQL</span><span class="tag">Microservices</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="sec sk-bg" id="skills">
+  <div class="si">
+    <div class="ey">Technical expertise</div>
+    <h2 class="sh2">My full technology stack</h2>
+    <p class="sp">Core proficiencies built through 3+ years of production backend engineering in a high-scale telecom environment.</p>
+    <div class="skg" id="skGrid">
+      <div class="sg">
+        <div class="sgt">Core Language &amp; Frameworks</div>
+        <div class="skrows">
+          <div class="skr"><div class="skt"><span class="skn">Java (8, 11, 17)</span><span class="skp">95%</span></div><div class="sktr"><div class="skf" data-w="95"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">Spring Boot</span><span class="skp">93%</span></div><div class="sktr"><div class="skf" data-w="93"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">Spring MVC</span><span class="skp">88%</span></div><div class="sktr"><div class="skf" data-w="88"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">JPA / Hibernate</span><span class="skp">85%</span></div><div class="sktr"><div class="skf" data-w="85"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">REST API Design</span><span class="skp">91%</span></div><div class="sktr"><div class="skf" data-w="91"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">Design Patterns / SOLID</span><span class="skp">87%</span></div><div class="sktr"><div class="skf" data-w="87"></div></div></div>
+        </div>
+      </div>
+      <div class="sg">
+        <div class="sgt">Distributed Systems &amp; Messaging</div>
+        <div class="skrows">
+          <div class="skr"><div class="skt"><span class="skn">Apache Kafka</span><span class="skp">91%</span></div><div class="sktr"><div class="skf" data-w="91"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">gRPC / Protocol Buffers</span><span class="skp">83%</span></div><div class="sktr"><div class="skf" data-w="83"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">Event-Driven Architecture</span><span class="skp">89%</span></div><div class="sktr"><div class="skf" data-w="89"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">Hazelcast (Distributed Cache)</span><span class="skp">79%</span></div><div class="sktr"><div class="skf" data-w="79"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">Microservices Architecture</span><span class="skp">88%</span></div><div class="sktr"><div class="skf" data-w="88"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">Session Replication</span><span class="skp">76%</span></div><div class="sktr"><div class="skf" data-w="76"></div></div></div>
+        </div>
+      </div>
+      <div class="sg">
+        <div class="sgt">Databases, DevOps &amp; Tools</div>
+        <div class="skrows">
+          <div class="skr"><div class="skt"><span class="skn">PostgreSQL / Oracle</span><span class="skp">85%</span></div><div class="sktr"><div class="skf" data-w="85"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">VoltDB / SingleStore</span><span class="skp">72%</span></div><div class="sktr"><div class="skf" data-w="72"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">Docker / Kubernetes</span><span class="skp">75%</span></div><div class="sktr"><div class="skf" data-w="75"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">Consul (Service Discovery)</span><span class="skp">76%</span></div><div class="sktr"><div class="skf" data-w="76"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">Jenkins / CI-CD / Git</span><span class="skp">81%</span></div><div class="sktr"><div class="skf" data-w="81"></div></div></div>
+          <div class="skr"><div class="skt"><span class="skn">Linux / Grafana / Monitoring</span><span class="skp">80%</span></div><div class="sktr"><div class="skf" data-w="80"></div></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="tpills">
+      <span class="tp">Java 8</span><span class="tp">Java 11</span><span class="tp">Java 17</span><span class="tp">Spring Boot</span><span class="tp">Spring MVC</span><span class="tp">Spring Security</span>
+      <span class="tp">Apache Kafka</span><span class="tp">gRPC</span><span class="tp">Protocol Buffers</span><span class="tp">REST APIs</span><span class="tp">Microservices</span><span class="tp">API Gateway</span>
+      <span class="tp">XSLT</span><span class="tp">Hazelcast</span><span class="tp">Distributed Cache</span><span class="tp">Session Replication</span><span class="tp">USSD</span>
+      <span class="tp">PostgreSQL</span><span class="tp">Oracle DB</span><span class="tp">VoltDB</span><span class="tp">SingleStore</span><span class="tp">MySQL</span><span class="tp">JPA/Hibernate</span>
+      <span class="tp">Docker</span><span class="tp">Kubernetes</span><span class="tp">Jenkins</span><span class="tp">Consul</span><span class="tp">Linux</span><span class="tp">Git</span>
+      <span class="tp">Postman</span><span class="tp">Grafana</span><span class="tp">Load Testing</span><span class="tp">LLD</span><span class="tp">System Design</span><span class="tp">SOLID</span><span class="tp">Design Patterns</span>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="sec cert-bg" id="certifications">
+  <div class="si">
+    <div class="ey">Certifications &amp; credentials</div>
+    <h2 class="sh2">11 verified credentials</h2>
+    <p class="sp">Spanning HackerRank skill tests, Udemy technical courses, Internshala training, and Comviva company awards — all earned between 2021 and 2025.</p>
+
+    <div class="cert-summary">
+      <div class="csum"><div class="csum-num">3</div><div class="csum-lbl">Company Awards</div></div>
+      <div class="csum"><div class="csum-num">2</div><div class="csum-lbl">HackerRank Tests</div></div>
+      <div class="csum"><div class="csum-num">5</div><div class="csum-lbl">Udemy Courses</div></div>
+      <div class="csum"><div class="csum-num">78+</div><div class="csum-lbl">Learning Hours</div></div>
+    </div>
+
+    <div class="cert-filters">
+      <button class="cf active" onclick="filterC('all',this)">All (11)</button>
+      <button class="cf" onclick="filterC('award',this)">Comviva Awards (3)</button>
+      <button class="cf" onclick="filterC('hackerrank',this)">HackerRank (2)</button>
+      <button class="cf" onclick="filterC('udemy',this)">Udemy (5)</button>
+      <button class="cf" onclick="filterC('internshala',this)">Internshala (1)</button>
+      <button class="cf" onclick="filterC('java',this)">Java</button>
+      <button class="cf" onclick="filterC('api',this)">API / Web</button>
+      <button class="cf" onclick="filterC('database',this)">Database</button>
+    </div>
+
+    <div class="cg" id="cg">
+
+      <!-- COMVIVA AWARD 1 -->
+      <div class="cc feat-cert" data-cat="award">
+        <div class="cc-stripe" style="background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div>
+        <div class="cc-body">
+          <div class="cc-plat">
+            <div class="cc-pico" style="background:#fffbeb;color:#92400e;font-size:13px;">CV</div>
+            <div><div class="cc-pname" style="color:#92400e;">Comviva Technologies</div><div class="cc-ptype">OVATIONS Rewards &amp; Recognition</div></div>
+          </div>
+          <div class="cc-title">Growth Mindset Practitioner of the Month — Silver</div>
+          <div class="cc-inst">Consumer Value Solutions Unit · Unit Leader's Choice Award</div>
+          <div class="cc-meta">
+            <div class="cc-mr">📅 May, FY 2025–26</div>
+            <div class="cc-mr">🏅 Silver · Unit Level</div>
+            <div class="cc-mr">✍️ Signed by Bhagwati Shetty, CHRO</div>
+          </div>
+          <div class="cc-ft">
+            <div class="cc-badge" style="background:#fffbeb;color:#92400e;border:1px solid #fcd34d;">🏅 Company Award</div>
+            <span class="cc-vfy">Verified ✓</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMVIVA AWARD 2 -->
+      <div class="cc feat-cert" data-cat="award">
+        <div class="cc-stripe" style="background:linear-gradient(90deg,#f59e0b,#fbbf24);"></div>
+        <div class="cc-body">
+          <div class="cc-plat">
+            <div class="cc-pico" style="background:#fffbeb;color:#92400e;font-size:13px;">CV</div>
+            <div><div class="cc-pname" style="color:#92400e;">Comviva Technologies</div><div class="cc-ptype">OVATIONS Rewards &amp; Recognition</div></div>
+          </div>
+          <div class="cc-title">Growth Mindset Practitioner of the Month — Silver</div>
+          <div class="cc-inst">Consumer Value Solutions Unit · Unit Leader's Choice Award</div>
+          <div class="cc-meta">
+            <div class="cc-mr">📅 July, FY 2025–26</div>
+            <div class="cc-mr">🏅 Silver · Unit Level</div>
+            <div class="cc-mr">✍️ Signed by Bhagwati Shetty, CHRO</div>
+          </div>
+          <div class="cc-ft">
+            <div class="cc-badge" style="background:#fffbeb;color:#92400e;border:1px solid #fcd34d;">🏅 Company Award</div>
+            <span class="cc-vfy">Verified ✓</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- COMVIVA AWARD 3 -->
+      <div class="cc feat-cert" data-cat="award">
+        <div class="cc-stripe" style="background:linear-gradient(90deg,#818cf8,#6366f1);"></div>
+        <div class="cc-body">
+          <div class="cc-plat">
+            <div class="cc-pico" style="background:#ede9fe;color:#6d28d9;font-size:13px;">CV</div>
+            <div><div class="cc-pname" style="color:#6d28d9;">Comviva Technologies</div><div class="cc-ptype">OVATIONS Rewards &amp; Recognition</div></div>
+          </div>
+          <div class="cc-title">Unit Leader's Discretionary Award</div>
+          <div class="cc-inst">Consumer Value Solutions Unit · Exceptional Q3 Contribution</div>
+          <div class="cc-meta">
+            <div class="cc-mr">📅 Q3, FY 2025–26</div>
+            <div class="cc-mr">⭐ Discretionary · Unit Level</div>
+            <div class="cc-mr">✍️ Signed by Bhagwati Shetty, CHRO</div>
+          </div>
+          <div class="cc-ft">
+            <div class="cc-badge" style="background:#ede9fe;color:#6d28d9;border:1px solid #c4b5fd;">⭐ Company Award</div>
+            <span class="cc-vfy">Verified ✓</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- HACKERRANK JAVA -->
+      <div class="cc" data-cat="hackerrank java">
+        <div class="cc-stripe hr-stripe"></div>
+        <div class="cc-body">
+          <div class="cc-plat"><div class="cc-pico hr-ico">H</div><div><div class="cc-pname hr-pn">HackerRank</div><div class="cc-ptype">Skill Certification Test</div></div></div>
+          <div class="cc-title">Java (Basic)</div>
+          <div class="cc-inst">Passed HackerRank skill certification — core Java syntax, OOP, data structures, standard library.</div>
+          <div class="cc-meta">
+            <div class="cc-mr">📅 24 Jul, 2022</div>
+            <div class="cc-mr">🔑 ID: AE2D8521F370</div>
+            <div class="cc-mr">✍️ Harishankaran K, CTO — HackerRank</div>
+          </div>
+          <div class="cc-ft"><div class="cc-badge hr-b">✓ Skill Test Passed</div><span class="cc-vfy">Verified ✓</span></div>
+        </div>
+      </div>
+
+      <!-- HACKERRANK PROBLEM SOLVING -->
+      <div class="cc" data-cat="hackerrank">
+        <div class="cc-stripe hr-stripe"></div>
+        <div class="cc-body">
+          <div class="cc-plat"><div class="cc-pico hr-ico">H</div><div><div class="cc-pname hr-pn">HackerRank</div><div class="cc-ptype">Skill Certification Test</div></div></div>
+          <div class="cc-title">Problem Solving (Basic)</div>
+          <div class="cc-inst">Passed HackerRank skill certification — algorithms, data structure manipulation, logical decomposition.</div>
+          <div class="cc-meta">
+            <div class="cc-mr">📅 04 Aug, 2022</div>
+            <div class="cc-mr">🔑 ID: 8233A50DFE37</div>
+            <div class="cc-mr">✍️ Harishankaran K, CTO — HackerRank</div>
+          </div>
+          <div class="cc-ft"><div class="cc-badge hr-b">✓ Skill Test Passed</div><span class="cc-vfy">Verified ✓</span></div>
+        </div>
+      </div>
+
+      <!-- UDEMY JAVA BEGINNERS -->
+      <div class="cc" data-cat="udemy java">
+        <div class="cc-stripe ud-stripe"></div>
+        <div class="cc-body">
+          <div class="cc-plat"><div class="cc-pico ud-ico">U</div><div><div class="cc-pname ud-pn">Udemy</div><div class="cc-ptype">Certificate of Completion</div></div></div>
+          <div class="cc-title">Java Programming for Complete Beginners</div>
+          <div class="cc-inst">in28Minutes Official · OOP, collections, generics, lambdas, streams — 31 hours</div>
+          <div class="cc-meta">
+            <div class="cc-mr">📅 Oct 18, 2022 · ⏱ 31 hours</div>
+            <div class="cc-mr">🔑 UC-b5173694-9a58-4760-bf7c-5e5cc83a2762</div>
+          </div>
+          <div class="cc-ft"><div class="cc-badge ud-b">🎓 Completed</div><a class="cc-vfy" href="https://ude.my/UC-b5173694-9a58-4760-bf7c-5e5cc83a2762" target="_blank">Verify 🔗</a></div>
+        </div>
+      </div>
+
+      <!-- UDEMY JSP -->
+      <div class="cc" data-cat="udemy java database">
+        <div class="cc-stripe ud-stripe"></div>
+        <div class="cc-body">
+          <div class="cc-plat"><div class="cc-pico ud-ico">U</div><div><div class="cc-pname ud-pn">Udemy</div><div class="cc-ptype">Certificate of Completion</div></div></div>
+          <div class="cc-title">JSP, Servlets &amp; JDBC for Beginners: Build a Database App</div>
+          <div class="cc-inst">Chad Darby · JSP templating, Servlet lifecycle, JDBC database connectivity</div>
+          <div class="cc-meta">
+            <div class="cc-mr">📅 Oct 19, 2022 · ⏱ 9 hours</div>
+            <div class="cc-mr">🔑 UC-7f1b0cd6-485a-4ebf-8c71-d099f1fdcb1e</div>
+          </div>
+          <div class="cc-ft"><div class="cc-badge ud-b">🎓 Completed</div><a class="cc-vfy" href="https://ude.my/UC-7f1b0cd6-485a-4ebf-8c71-d099f1fdcb1e" target="_blank">Verify 🔗</a></div>
+        </div>
+      </div>
+
+      <!-- UDEMY SOAP REST -->
+      <div class="cc" data-cat="udemy java api">
+        <div class="cc-stripe ud-stripe"></div>
+        <div class="cc-body">
+          <div class="cc-plat"><div class="cc-pico ud-ico">U</div><div><div class="cc-pname ud-pn">Udemy</div><div class="cc-ptype">Certificate of Completion</div></div></div>
+          <div class="cc-title">Java Web Services Part 2 — SOAP &amp; REST Security</div>
+          <div class="cc-inst">Bharath Thippireddy · WS-Security, OAuth, JWT, SSL/TLS for Java web services</div>
+          <div class="cc-meta">
+            <div class="cc-mr">📅 Oct 25, 2022 · ⏱ 4.5 hours</div>
+            <div class="cc-mr">🔑 UC-3d83efe8-d6f2-4a3e-8dac-750bcf664561</div>
+          </div>
+          <div class="cc-ft"><div class="cc-badge ud-b">🎓 Completed</div><a class="cc-vfy" href="https://ude.my/UC-3d83efe8-d6f2-4a3e-8dac-750bcf664561" target="_blank">Verify 🔗</a></div>
+        </div>
+      </div>
+
+      <!-- UDEMY REST POSTMAN -->
+      <div class="cc" data-cat="udemy api">
+        <div class="cc-stripe ud-stripe"></div>
+        <div class="cc-body">
+          <div class="cc-plat"><div class="cc-pico ud-ico">U</div><div><div class="cc-pname ud-pn">Udemy</div><div class="cc-ptype">Certificate of Completion</div></div></div>
+          <div class="cc-title">REST API Testing &amp; Automation using Postman</div>
+          <div class="cc-inst">Tejasvi Hegde · REST fundamentals, Postman collections, automated test scripts, CI integration</div>
+          <div class="cc-meta">
+            <div class="cc-mr">📅 Oct 26, 2022 · ⏱ 8 hours</div>
+            <div class="cc-mr">🔑 UC-c63c9824-ff65-481a-9b99-1548f7a9c183</div>
+          </div>
+          <div class="cc-ft"><div class="cc-badge ud-b">🎓 Completed</div><a class="cc-vfy" href="https://ude.my/UC-c63c9824-ff65-481a-9b99-1548f7a9c183" target="_blank">Verify 🔗</a></div>
+        </div>
+      </div>
+
+      <!-- UDEMY SQL -->
+      <div class="cc" data-cat="udemy database">
+        <div class="cc-stripe ud-stripe"></div>
+        <div class="cc-body">
+          <div class="cc-plat"><div class="cc-pico ud-ico">U</div><div><div class="cc-pname ud-pn">Udemy</div><div class="cc-ptype">Certificate of Completion</div></div></div>
+          <div class="cc-title">SQL for Beginners: Learn SQL using MySQL &amp; Database Design</div>
+          <div class="cc-inst">Tim Buchalka's Academy · SQL queries, joins, indexes, stored procedures, DB design</div>
+          <div class="cc-meta">
+            <div class="cc-mr">📅 Oct 8, 2022 · ⏱ 8 hours</div>
+            <div class="cc-mr">🔑 UC-0bca78d5-fd76-4bb6-ac70-9387b72d2502</div>
+          </div>
+          <div class="cc-ft"><div class="cc-badge ud-b">🎓 Completed</div><a class="cc-vfy" href="https://ude.my/UC-0bca78d5-fd76-4bb6-ac70-9387b72d2502" target="_blank">Verify 🔗</a></div>
+        </div>
+      </div>
+
+      <!-- INTERNSHALA ML -->
+      <div class="cc" data-cat="internshala">
+        <div class="cc-stripe is-stripe"></div>
+        <div class="cc-body">
+          <div class="cc-plat"><div class="cc-pico is-ico" style="font-size:11px;">IS</div><div><div class="cc-pname is-pn">Internshala</div><div class="cc-ptype">Training Certificate</div></div></div>
+          <div class="cc-title">Machine Learning with AI</div>
+          <div class="cc-inst">SR Institute of Management &amp; Technology · Supervised/unsupervised learning, regression, classification, clustering, AI fundamentals</div>
+          <div class="cc-meta">
+            <div class="cc-mr">📅 May 13, 2021 · 📊 Score: 59%</div>
+            <div class="cc-mr">🔑 D90F93D6-75FC-B490-7B47-7309A1EC0C38</div>
+          </div>
+          <div class="cc-ft"><div class="cc-badge is-b">✓ Completed</div><span class="cc-vfy">Verified ✓</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RECOGNITION & EDUCATION -->
+<section class="sec rec-bg" id="recognition">
+  <div class="si">
+    <div class="ey">Education &amp; character</div>
+    <h2 class="sh2">Academic background &amp; how I work</h2>
+    <div class="rg">
+      <div class="rc edu">
+        <div class="rc-lbl">Education · Graduated 2022</div>
+        <div style="font-size:36px;margin-bottom:12px;">🎓</div>
+        <div class="rc-title">B.Tech — Information Technology</div>
+        <div class="rc-sub">Dr. A.P.J. Abdul Kalam Technical University (AKTU) · Uttar Pradesh<br><br><strong>CGPA: 8.26 / 10</strong><br><br>Strong academic foundation in data structures, algorithms, database systems, operating systems, computer networks, and software engineering — directly applied in backend engineering work from day one.</div>
+      </div>
+      <div class="rc award">
+        <div class="rc-lbl">Awards summary · FY 2025–26</div>
+        <div class="rc-badge">🏅 Triple Award Winner</div>
+        <div class="rc-title">3 Comviva OVATIONS Awards</div>
+        <div class="rc-sub">Recognised <strong>3 times in a single financial year</strong> by Comviva Technologies leadership — an exceptional track record within the Consumer Value Solutions Unit. Awards: Growth Mindset Practitioner (May), Growth Mindset Practitioner (July), and Unit Leader's Discretionary Award (Q3). All signed by CHRO Bhagwati Shetty under the OVATIONS Rewards &amp; Recognition Program.</div>
+      </div>
+      <div class="rc full">
+        <div class="rc-lbl">Professional character · As seen by colleagues &amp; leadership</div>
+        <div class="rc-title">What defines how I work</div>
+        <div class="traits">
+          <div class="trait">⚡ Fast Learner</div>
+          <div class="trait">🤝 Strong Team Player</div>
+          <div class="trait">📋 Full Ownership Mindset</div>
+          <div class="trait">🔍 Detail Oriented</div>
+          <div class="trait">🧠 Growth Mindset</div>
+          <div class="trait">🎯 Deadline Driven</div>
+          <div class="trait">💬 Clear Communicator</div>
+          <div class="trait">🏗️ Architecture First</div>
+          <div class="trait">📈 Metrics Driven</div>
+          <div class="trait">👨‍🏫 Natural Mentor</div>
+          <div class="trait">🔒 Zero-Defect Standard</div>
+          <div class="trait">🚀 Proactive — Not Reactive</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="ct-bg" id="contact">
+  <div class="ct-in">
+    <div>
+      <div class="ey">Get in touch</div>
+      <h2 class="sh2">Let's build something great.</h2>
+      <p class="ct-pitch">Open to <strong>Senior Backend Engineering and Technical Lead roles</strong> in Java, Spring Boot, Kafka, and distributed systems. Based in Delhi, India — open to <strong>remote, hybrid, and on-site</strong> opportunities across India and globally.</p>
+      <div class="clinks">
+        <a class="cl" href="mailto:singhanket5101@gmail.com"><div class="cl-ico">📧</div><div><div class="cl-l">Email</div><div class="cl-v">singhanket5101@gmail.com</div></div></a>
+        <a class="cl" href="https://linkedin.com/in/anket-pratap-singh" target="_blank"><div class="cl-ico">🔗</div><div><div class="cl-l">LinkedIn</div><div class="cl-v">linkedin.com/in/anket-pratap-singh</div></div></a>
+        <a class="cl" href="tel:+919161153581"><div class="cl-ico">📱</div><div><div class="cl-l">Phone</div><div class="cl-v">+91 9161153581</div></div></a>
+      </div>
+    </div>
+    <div class="ct-r">
+      <div class="opill"><div class="odot"></div><div class="otxt"><strong>Currently open to opportunities</strong><br>Available for Senior Backend / Technical Lead roles. Immediate to 30-day notice. Open to relocation &amp; remote.</div></div>
+      <div class="ib"><div class="ib-t">Roles I'm targeting</div><div class="itags"><span class="itag">Senior Java Engineer</span><span class="itag">Backend Technical Lead</span><span class="itag">Distributed Systems Engineer</span><span class="itag">Platform / API Engineer</span><span class="itag">Microservices Architect</span></div></div>
+      <div class="ib"><div class="ib-t">Preferred stack</div><div class="itags"><span class="itag">Java · Spring Boot</span><span class="itag">Kafka · Event-Driven</span><span class="itag">gRPC · Microservices</span><span class="itag">PostgreSQL · Oracle</span><span class="itag">Docker · Kubernetes</span></div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="ftl">Anket Pratap Singh</div>
+  <div class="ftr">Technical Lead · Java · Kafka · Microservices · Delhi, India<br>singhanket5101@gmail.com · +91 9161153581</div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mm').classList.toggle('open');}
+window.addEventListener('scroll',()=>{document.getElementById('nav').style.boxShadow=window.scrollY>8?'0 2px 20px rgba(17,19,24,.09)':'none';});
+
+// Intersection observer — experience, projects, awards
+const io=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){const d=parseInt(en.target.dataset.delay||0);setTimeout(()=>en.target.classList.add('vis'),d);}});},{threshold:0.1});
+document.querySelectorAll('.ei').forEach((el,i)=>{el.dataset.delay=i*100;io.observe(el);});
+document.querySelectorAll('.pc').forEach((el,i)=>{el.dataset.delay=i*80;io.observe(el);});
+document.querySelectorAll('.aw').forEach((el,i)=>{el.dataset.delay=i*100;io.observe(el);});
+
+// Skill bars
+const sio=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){document.querySelectorAll('.skf').forEach(b=>{setTimeout(()=>{b.style.width=b.dataset.w+'%';},250);});sio.disconnect();}});},{threshold:0.15});
+const sg=document.getElementById('skGrid');if(sg)sio.observe(sg);
+
+// Cert filter
+function filterC(cat,btn){
+  document.querySelectorAll('.cf').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#cg .cc').forEach(c=>{
+    c.style.display=(cat==='all'||c.dataset.cat.includes(cat))?'flex':'none';
+  });
+}
+</script>
+</body>
+</html>

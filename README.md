@@ -170,15 +170,16 @@ A terminal-based ATM simulation built to solidify Java OOP foundations before en
 ---
 
 ## 📊 GitHub Stats
- 
+
 <div align="center">
- 
-![Anket's GitHub Stats](https://github-readme-stats.vercel.app/api?username=ThakurAnketPratapSingh&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&cache_seconds=86400)
- 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=ThakurAnketPratapSingh&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=86400)
- 
+
+![Stats](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=ThakurAnketPratapSingh&theme=tokyonight)
+![Top Languages](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=ThakurAnketPratapSingh&theme=tokyonight)
+
 [![GitHub Streak](https://streak-stats.demolab.com/?user=ThakurAnketPratapSingh&theme=tokyonight&hide_border=true)](https://git.io/streak-stats)
- 
+
+![Profile Views](https://komarev.com/ghpvc/?username=ThakurAnketPratapSingh&color=1647cc&style=for-the-badge&label=Profile+Views)
+
 </div>
 
 
